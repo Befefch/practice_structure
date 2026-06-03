@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include <cstdio> // для sscanf и sprintf
+#include <cstdio> // для sscanf и snprintf
 
 using namespace std;
 
@@ -150,7 +150,7 @@ void printHeader() {
     cout << "*******************************************************************************\n";
     cout << "*                      ОЗНАКОМИТЕЛЬНАЯ ПРАКТИКА                               *\n";
     cout << "*-----------------------------------------------------------------------------*\n";
-    cout << "* Project Type  : Win32 Console Application                                   *\n";
+    cout << "* Project Type  : Standard C++ Console App                                    *\n";
     cout << "* File Name     : ozn_pr.cpp                                                  *\n";
     cout << "* Programmer(s) : Бефорд М. А.                                                *\n";
     cout << "* Modifyed By   : -                                                           *\n";
@@ -321,7 +321,7 @@ void printTable(Airplane* planes, int* indices, int count) {
                 badHeaderPrinted = true;
             }
             char numStr[12];
-            sprintf(numStr, "%d", orderNum++); // перевод числа в строку
+            snprintf(numStr, sizeof(numStr), "%d", orderNum++); // безопасный перевод числа в строку
             printCell(numStr, 6);
             printCell(planes[idx].mark, 20);
             printCell(planes[idx].boardNum, 20);
@@ -344,7 +344,7 @@ void printTable(Airplane* planes, int* indices, int count) {
                 cout << "-----------------------------------------------------------------\n";
             }
             char numStr[12];
-            sprintf(numStr, "%d", orderNum++); // перевод числа в строку
+            snprintf(numStr, sizeof(numStr), "%d", orderNum++); // безопасный перевод числа в строку
             printCell(numStr, 6);
             printCell(planes[idx].mark, 20);
             printCell(planes[idx].boardNum, 20);
